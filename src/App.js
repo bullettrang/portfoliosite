@@ -1,26 +1,60 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import styled from 'styled-components';
 import './App.css';
+import Splash from './coverimg.JPG';
 
+
+
+const NavBar = styled.div`
+display: flex;
+flex-flow: row wrap;
+
+justify-content: flex-end;
+height:5em;
+
+background: deepskyblue;
+
+position: fixed; /* Set the navbar to fixed position */
+top: 0; /* Position the navbar at the top of the page */
+width: 100%; /* Full width */
+
+a{
+  text-decoration: none;
+  display: block;
+  padding: 2em;
+  color: white;
+}
+`;
+
+const HomeSplash = styled.div`
+  background-image: url(${Splash});
+  background-position:center;
+  background-size:cover;
+  width:100%;
+  height:100vh;   //this saved me from killing myself 
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  h1{
+    margin:0;
+    text-align:center;
+  }
+`;
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <NavBar id="NavBar">
+        <a href="/">Link1</a>
+        <a href="/">Link2</a>
+        </NavBar>
+      <HomeSplash>
+        <h1>BRIAN TRANG</h1>
+      </HomeSplash>
+
       </div>
+      
+      
     );
   }
 }
