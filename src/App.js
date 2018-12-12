@@ -1,60 +1,29 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import './App.css';
-import Splash from './coverimg.JPG';
+import {Home} from './Home';
+import {NavBar} from './NavBar';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
 
-const NavBar = styled.div`
-display: flex;
-flex-flow: row wrap;
 
-justify-content: flex-end;
-height:5em;
 
-background: deepskyblue;
-
-position: fixed; /* Set the navbar to fixed position */
-top: 0; /* Position the navbar at the top of the page */
-width: 100%; /* Full width */
-
-a{
-  text-decoration: none;
-  display: block;
-  padding: 2em;
-  color: white;
-}
-`;
-
-const HomeSplash = styled.div`
-  background-image: url(${Splash});
-  background-position:center;
-  background-size:cover;
-  width:100%;
-  height:100vh;   //this saved me from killing myself 
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  h1{
-    margin:0;
-    text-align:center;
-  }
-`;
 class App extends Component {
   render() {
     return (
+      <Router>
       <div>
         <NavBar id="NavBar">
-        <a href="/">Link1</a>
-        <a href="/">Link2</a>
+          <Link to="/about/">About</Link>
+          <Link to="/users/">Portfolio</Link>
         </NavBar>
-      <HomeSplash>
-        <h1>BRIAN TRANG</h1>
-      </HomeSplash>
-
+        <Home/>
+{/*       <Route path="/" exact component={Index} />
+      <Route path="/about/"/>
+      <Route path="/users/"/> */}
       </div>
-      
-      
+      </Router>
     );
   }
 }
