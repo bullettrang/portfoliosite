@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Splash from './coverimg.JPG';
 const HomeSplash = styled.div`
-  background-image: url(${Splash});
+  background-image:url(${Splash});
   background-position:center;
   background-size:cover;
   width:100%;
